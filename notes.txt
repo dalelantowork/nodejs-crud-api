@@ -1,3 +1,15 @@
 npm init -y
 npm i express
 npm run serve
+
+# install nodemon globally
+npm i nodemon
+
+# install nodemon dev
+npm i nodemon -D
+
+# add in package.json under scripts
+"dev": "nodemon server.js"
+
+# use nodemon
+npm run dev
