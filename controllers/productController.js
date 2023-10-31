@@ -41,7 +41,8 @@ const updateProduct = asyncHandler(async (request, response) => {
     const { id } = request.params;
     const product = await Product.findByIdAndUpdate(id, request.body);
     if (!product) {
-      return response.status(404).json({ message: `product not found` });
+      response.status(404);
+      throw new Error(`resource not found`);
     }
     const updatedProduct = await Product.findById(id);
     response.status(200).json(updatedProduct);
@@ -57,7 +58,8 @@ const deleteProduct = asyncHandler(async (request, response) => {
     const { id } = request.params;
     const product = await Product.findByIdAndDelete(id, request.body);
     if (!product) {
-      return response.status(404).json({ message: `product not found` });
+      response.status(404);
+      throw new Error(`resource not found`);
     }
     response.status(200).json(product);
   } catch (error) {
