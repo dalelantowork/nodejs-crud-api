@@ -17,15 +17,7 @@ npm run dev
 # install mongoose (mongo db)
 npm i mongoose
 
-Mongodb
-project: nodejs
-dbname: nodejsAPI
-username: dalelantowork
-password: 8XPE7M4Bj0krXlLk
-
 IP Address
 0.0.0.0/0 anyone can access
 
-Connect DB with application
-uri : mongodb+srv://dalelantowork:<password>@nodejsapi.gepbfqw.mongodb.net/?retryWrites=true&w=majority
-replace password : uri : mongodb+srv://dalelantowork:8XPE7M4Bj0krXlLk@nodejsapi.gepbfqw.mongodb.net/?retryWrites=true&w=majority
+Draw.io
