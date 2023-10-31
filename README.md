@@ -3,6 +3,9 @@
 ### Deployed in Render
 ![Home](https://github.com/dalelantowork/nodejs-crud-api/blob/main/public/images/deployed.png?raw=true)
 
+### Combined with a Sample React Js Frontend 
+![Home](https://github.com/dalelantowork/nodejs-crud-api/blob/main/public/images/frontend-react.png?raw=true)
+
 ### Get Products
 ![Home](https://github.com/dalelantowork/nodejs-crud-api/blob/main/public/images/get-products.png?raw=true)
 
