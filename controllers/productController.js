@@ -1,38 +1,42 @@
 const Product = require("../models/productModel");
+const asyncHandler = require("express-async-handler");
 
 // get all
-const getProducts = async (request, response) => {
+const getProducts = asyncHandler(async (request, response) => {
   try {
     const products = await Product.find({}); // {} means get all
     response.status(200).json(products);
   } catch (error) {
-    response.status(500).json({ message: error.message });
+    response.status(500);
+    throw new Error(error.message);
   }
-};
+});
 
 // get by id
-const getProduct = async (request, response) => {
+const getProduct = asyncHandler(async (request, response) => {
   try {
     const { id } = request.params;
     const product = await Product.findById(id);
     response.status(200).json(product);
   } catch (error) {
-    response.status(500).json({ message: error.message });
+    response.status(500);
+    throw new Error(error.message);
   }
-};
+});
 
 // save product
-const saveProduct = async (request, response) => {
+const saveProduct = asyncHandler(async (request, response) => {
   try {
     const product = await Product.create(request.body);
     response.status(200).json(product);
   } catch (error) {
-    response.status(500).json({ message: error.message });
+    response.status(500);
+    throw new Error(error.message);
   }
-};
+});
 
 // update product
-const updateProduct = async (request, response) => {
+const updateProduct = asyncHandler(async (request, response) => {
   try {
     const { id } = request.params;
     const product = await Product.findByIdAndUpdate(id, request.body);
@@ -42,12 +46,13 @@ const updateProduct = async (request, response) => {
     const updatedProduct = await Product.findById(id);
     response.status(200).json(updatedProduct);
   } catch (error) {
-    response.status(500).json({ message: error.message });
+    response.status(500);
+    throw new Error(error.message);
   }
-};
+});
 
 // delete product
-const deleteProduct = async (request, response) => {
+const deleteProduct = asyncHandler(async (request, response) => {
   try {
     const { id } = request.params;
     const product = await Product.findByIdAndDelete(id, request.body);
@@ -56,9 +61,10 @@ const deleteProduct = async (request, response) => {
     }
     response.status(200).json(product);
   } catch (error) {
-    response.status(500).json({ message: error.message });
+    response.status(500);
+    throw new Error(error.message);
   }
-};
+});
 
 module.exports = {
   getProducts,
